@@ -1,0 +1,26 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  azureSubscription: '<Your-Azure-Subscription>'
+  appName: '<Your-App-Service-Name>'
+  resourceGroup: '<Your-Resource-Group>'
+  packagePath: '$(Build.ArtifactStagingDirectory)/*.zip'
+
+steps:
+- task: DownloadBuildArtifacts@0
+  inputs:
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: 'drop'
+    downloadPath: '$(Build.ArtifactStagingDirectory)'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: '$(azureSubscription)'
+    appName: '$(appName)'
+    resourceGroupName: '$(resourceGroup)'
+    package: '$(packagePath)'

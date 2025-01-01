@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Tariku T.",
+  "classifications": ["Web", "API"],
+  "identity": "CopilotApiDemo.Template",
+  "name": "Copilot API Demo",
+  "shortName": "copilotapidemo",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "CopilotApiDemo",
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!excludeInfrastructure)",
+          "include": [
+            "infrastructure/**"
+          ]
+        }
+      ]
+    },
+    {
+      "include": [
+        "build/**",
+        "deploy/**",
+        ".gitignore"
+      ]
+    }
+  ],
+  "symbols": {
+    "excludeInfrastructure": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Exclude the infrastructure folder"
+    }
+  }
+}
