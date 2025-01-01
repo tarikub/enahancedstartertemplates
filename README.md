@@ -54,4 +54,10 @@ CopilotApiDemo/
 │   └── Helpers/
 └── UnitTests/ 
 ```
+References:
 
+[1]: Fowler, Martin. Patterns of Enterprise Application Architecture. Addison-Wesley Professional, 2002.
+
+[2]: Lowry, Uval. "Reducing Volatility in Your System Architecture." Microsoft MVP Blog, Microsoft
+
+[3]: Giesel, Steven. "Repository Pattern - A Controversy Explained."
